@@ -1,0 +1,45 @@
+spring:
+  kafka:
+    bootstrapServers: localhost:9091,localhost:9092,localhost:9093
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: org.momlearning.kafka02
+    streams:
+      application-id: kafka-streams-learning-app
+      properties:
+        default:
+          deserialization:
+            exception:
+              handler: org.apache.kafka.streams.errors.LogAndContinueExceptionHandler
+    topics:
+      task-1-topic-1:
+        name: task-1-topic-1
+        partitions: 1
+        replicas: 1
+      task-1-topic-2:
+        name: task-1-topic-2
+        partitions: 1
+        replicas: 1
+      task-2-topic-1:
+        name: task-2-topic-1
+        partitions: 1
+        replicas: 1
+      task-3-topic-1:
+        name: task3-1
+        partitions: 1
+        replicas: 1
+      task-3-topic-2:
+        name: task3-2
+        partitions: 1
+        replicas: 1
+      task-4-topic-1:
+        name: task-4-topic-1
+        partitions: 1
+        replicas: 1
