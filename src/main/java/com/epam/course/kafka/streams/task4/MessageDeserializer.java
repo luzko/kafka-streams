@@ -32,4 +32,3 @@ public class MessageDeserializer implements Deserializer<Message> {
 
     }
 }
-

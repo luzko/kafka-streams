@@ -29,14 +29,14 @@ public class Task1Configuration {
     }
 
     @Bean
-    NewTopic take1topic1(@Value("${kafka.topics.task-1-topic-1.name}") String topic,
+    NewTopic task1topic1(@Value("${kafka.topics.task-1-topic-1.name}") String topic,
                          @Value("${kafka.topics.task-1-topic-1.partitions}") int partitions,
                          @Value("${kafka.topics.task-1-topic-1.replicas}") int replicas) {
         return generateKafkaTopic(topic, partitions, replicas);
     }
 
     @Bean
-    NewTopic take1topic2(@Value("${kafka.topics.task-1-topic-2.name}") String topic,
+    NewTopic task1topic2(@Value("${kafka.topics.task-1-topic-2.name}") String topic,
                          @Value("${kafka.topics.task-1-topic-2.partitions}") int partitions,
                          @Value("${kafka.topics.task-1-topic-2.replicas}") int replicas) {
         return generateKafkaTopic(topic, partitions, replicas);
